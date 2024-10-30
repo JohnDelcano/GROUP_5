@@ -3,10 +3,13 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 
 const DASHBOARD = (props) => {
+
   const { navigation } = props;
 
   return (
+
     <DrawerContentScrollView {...props}>
+
       <View style={styles.profileSection}>
         <Image 
           source={require('../IMAGES/group.png')}  
@@ -15,13 +18,18 @@ const DASHBOARD = (props) => {
         <Text style={styles.profileText}>GROUP5_CUTIE</Text>  
         <Text style={styles.line}>____________________________</Text>
       </View>
+
       <DrawerItemList {...props} />
+
       <TouchableOpacity onPress={() => navigation.navigate('STARTED')} style={styles.align}>
-      <Text style={styles.lines}>____________________________</Text>
+        <Text style={styles.lines}>____________________________</Text>
         <Text style={styles.logoutText}>Log-out</Text>
       </TouchableOpacity>
+
     </DrawerContentScrollView>
+
   );
+
 };
 
 const styles = StyleSheet.create({

@@ -59,7 +59,6 @@ const workoutData = [
         ],
         guide: require('../IMAGES/preacher.gif')
       },
-      
     ],
     image: require('../IMAGES/biceps.png')
   },
@@ -293,8 +292,8 @@ const workoutData = [
   }
 ];
 
-
 export default function HOME({ navigation }) {
+
   const [modalVisible, setModalVisible] = useState(false);
   const [currentWorkoutIndex, setCurrentWorkoutIndex] = useState(0);
 
@@ -310,8 +309,11 @@ export default function HOME({ navigation }) {
   const currentWorkout = workoutData[currentWorkoutIndex];
 
   return (
+
     <SafeAreaView style={homelayouts.container}>
+
       <StatusBar backgroundColor='#226C01'/>
+
       <View style={homelayouts.background}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image source={require('../IMAGES/sort.png')} style={fonts.Sort} />
@@ -328,7 +330,9 @@ export default function HOME({ navigation }) {
 
       <View style={homelayouts.backgroundquotes}>
         <Text style={fonts.Quotes}>
-          "Lifting is a strength-training practice using resistance to build muscle and improve overall fitness. Explore targeted workouts for each muscle group and learn how to lift effectively."
+          "Lifting is a strength-training practice using resistance to build muscle and improve 
+          overall fitness. Explore targeted workouts for each muscle group and learn how to lift 
+          effectively."
         </Text>
       </View>
 
@@ -338,32 +342,31 @@ export default function HOME({ navigation }) {
 
       <View style={homelayouts.group}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={homelayouts.scrollContainer}>
-      
           {workoutData.map((item, index) => (
             <View style={homelayouts.itemposition} key={index}>
               <TouchableOpacity onPress={() => openModal(index)}>
-              <View style={homelayouts.item} key={index}>
-                <Image source={item.image} style={homelayouts.picture} />
-                <Text style={fonts.Title}>{item.title}</Text>
+                <View style={homelayouts.item} key={index}>
+                  <Image source={item.image} style={homelayouts.picture} />
+                  <Text style={fonts.Title}>{item.title}</Text>
                 </View>
               </TouchableOpacity>
-              </View>
+            </View>
           ))}
         </ScrollView>
       </View>
 
-      {/* Modal Section */}
       <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={closeModal}
+      animationType="slide"
+      transparent={true}
+      visible={modalVisible}
+      onRequestClose={closeModal}
       >
         <View style={homelayouts.modalContainer}>
           <View style={homelayouts.modalHeader}>
             <TouchableOpacity onPress={closeModal}>
               <Image source={require('../IMAGES/left.png')} style={homelayouts.modalBackIcon} />
             </TouchableOpacity>
+
             <View style={homelayouts.con}>
               <Text style={fonts.ModalTitle}>{currentWorkout.title}</Text>
             </View>
@@ -373,23 +376,27 @@ export default function HOME({ navigation }) {
             <Text style={fonts.ExerciseDescription}>{currentWorkout.description}</Text>
             <Image source={currentWorkout.image} style={homelayouts.modalImage} />
 
-            {/* Display exercises */}
             {currentWorkout.exercises.map((exercise, exerciseIndex) => (
               <View key={exerciseIndex} style={homelayouts.exerciseContainer}>
-                <Text style={fonts.ExerciseName}>{exercise.name}</Text>
+                <Text style={fonts.ExerciseName}>
+                  {exercise.name}
+                </Text>
+
                 {exercise.steps.map((step, stepIndex) => (
                   <Text key={stepIndex} style={fonts.ExerciseStep}>
                     {`${step}`}
                   </Text>
-                  
                 ))}
+
                <Image source={exercise.guide} style={fonts.guide} />
               </View>
             ))}
           </ScrollView>
-
         </View>
       </Modal>
+
     </SafeAreaView>
+
   );
+  
 }

@@ -29,6 +29,8 @@ const startedlayout = StyleSheet.create({
     borderBottomRightRadius: 130,
     elevation: 10,
     shadowColor: '#000',
+    borderColor: 'black',
+    borderWidth: 2,
   },
 });
 

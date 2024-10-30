@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { ActivityIndicator, View } from 'react-native';
 
 export default function App() {
+  
   const [fontsLoaded] = useFonts({
     'Inter_24pt-Black': require('../GROUP5_PE/LIFTING/FONTS/Inter_24pt-Black.ttf'),
     'Inter_18pt-SemiBold': require('../GROUP5_PE/LIFTING/FONTS/Inter_18pt-SemiBold.ttf'),
@@ -25,4 +26,5 @@ export default function App() {
   return (
     <NAVIGATIONS/>
   );
+
 };

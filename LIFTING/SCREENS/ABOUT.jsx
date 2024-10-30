@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import fonts from '../FONTS/Typography';
 
 export default function HOME({ navigation }) {
+
   const [expandedDeveloper, setExpandedDeveloper] = useState(null);
 
   const developers = [
@@ -51,7 +52,9 @@ export default function HOME({ navigation }) {
   };
 
   return (
+
     <SafeAreaView style={aboutlayouts.container}>
+
       <StatusBar backgroundColor='#226C01' />
 
       <View style={aboutlayouts.background}>
@@ -68,7 +71,6 @@ export default function HOME({ navigation }) {
         style={{ flex: 1 }}
         contentContainerStyle={{ flexGrow: 1, paddingBottom: '238%' }}
       >
-
         <View style={aboutlayouts.positionabout}>
           <Text style={fonts.Home}>About us</Text>
         </View>
@@ -81,10 +83,8 @@ export default function HOME({ navigation }) {
             of lifting and the key muscle groups involved in a well-rounded strength-training program."
           </Text>
         </View>
-
      
-          <Image  source={require('../IMAGES/group.jpg')} style={aboutlayouts.grouppic}/>
-   
+        <Image  source={require('../IMAGES/group.jpg')} style={aboutlayouts.grouppic}/>
 
         <View style={aboutlayouts.positionabout}>
           <Text style={fonts.Home}>Developers</Text>
@@ -94,19 +94,19 @@ export default function HOME({ navigation }) {
           {developers.map((developer, index) => (
             <View key={index} style={aboutlayouts.developer}>
               <Image source={developer.image} style={aboutlayouts.picture} />
+
               <View style={aboutlayouts.group}>
                 <Text style={aboutlayouts.name}>{developer.name}</Text>
                 <Text style={aboutlayouts.role}> - {developer.role}</Text>
               </View>
+
               <TouchableOpacity onPress={() => toggleDescription(index)}>
-                {/* Toggle the arrow icon based on the expanded state */}
                 <Image 
-                  source={expandedDeveloper === index ? require('../IMAGES/up.png') : require('../IMAGES/down.png')} 
-                  style={fonts.Back} 
+                source={expandedDeveloper === index ? require('../IMAGES/up.png') : require('../IMAGES/down.png')} 
+                style={fonts.Back} 
                 />
               </TouchableOpacity>
 
-              {/* Conditional rendering of the description */}
               {expandedDeveloper === index && (
                 <View style={aboutlayouts.descriptionContainer}>
                   <Text style={aboutlayouts.description}>{developer.description}</Text>
@@ -115,8 +115,10 @@ export default function HOME({ navigation }) {
             </View>
           ))}
         </View>
-
       </ScrollView>
+
     </SafeAreaView>
+
   );
+
 }

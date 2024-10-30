@@ -27,8 +27,8 @@ const aboutlayouts = StyleSheet.create({
   },
   backgroundquotes: {
     paddingLeft: 20,
-    marginTop: 10,
-    marginBottom: -555,
+    marginTop: 18,
+    marginBottom: -605,
   },
   developer: {
     backgroundColor: '#226C01',
@@ -67,7 +67,7 @@ const aboutlayouts = StyleSheet.create({
     flex: 1,
   },
   descriptionContainer: {
-    marginTop: 5, // Add space above the description
+    marginTop: 5, 
   },
   description: {
     color: 'white',

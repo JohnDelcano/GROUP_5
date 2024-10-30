@@ -69,10 +69,10 @@ const fonts = {
     },
     Description: {
       fontFamily: 'ZillaSlab-Regular',
-      fontSize: 24,
+      fontSize: 20,
       color: 'white',
       lineHeight: 28,
-      textAlign: 'center',
+      textAlign: 'justify',
       padding: 15,
       height: '85%',
       width: '95%',
@@ -96,7 +96,7 @@ const fonts = {
       fontFamily: 'Inter_28pt-Regular',
       color: 'white',
       fontSize: 16,
-      textAlign: 'center',
+      textAlign: 'justify',
       marginVertical: 20,
       lineHeight: 22,
     },
@@ -112,7 +112,6 @@ const fonts = {
       marginBottom: 20,
       flexDirection: 'column',
     },
-    
     ExerciseName: {
       fontSize: 26,
       marginBottom: 5,
@@ -120,7 +119,6 @@ const fonts = {
       color: 'white',
       paddingTop: 30,
     },
-    
     ExerciseStep: {
       fontSize: 16,
       marginLeft: 10,
